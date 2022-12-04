@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33110.190
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Recipes.GetRecipesFunc", "Recipes.GetRecipesFunc\Recipes.GetRecipesFunc.csproj", "{BAE907D6-DAF0-440A-A127-3AA5DDA8D472}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Recipes.Base", "Recipes.Base\Recipes.Base.csproj", "{F69A8708-8CD8-40A0-B9AD-F7C343A20009}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BAE907D6-DAF0-440A-A127-3AA5DDA8D472}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BAE907D6-DAF0-440A-A127-3AA5DDA8D472}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BAE907D6-DAF0-440A-A127-3AA5DDA8D472}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BAE907D6-DAF0-440A-A127-3AA5DDA8D472}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F69A8708-8CD8-40A0-B9AD-F7C343A20009}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F69A8708-8CD8-40A0-B9AD-F7C343A20009}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F69A8708-8CD8-40A0-B9AD-F7C343A20009}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F69A8708-8CD8-40A0-B9AD-F7C343A20009}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9AA7EF92-5018-4E96-ADD0-6B56D5389C24}
+	EndGlobalSection
+EndGlobal
