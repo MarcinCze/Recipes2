@@ -10,7 +10,7 @@ type RecipesListProps = {
 
 class RecipesList extends React.Component {
 
-  apiUrl : string = `https://getrecipesfunc.azurewebsites.net/api/GetRecipesFunc?code=${process.env.REACT_APP_API_KEY}`;
+  apiUrl: string = `https://getrecipesfunc.azurewebsites.net/api/GetRecipesFunc?code=${process.env.REACT_APP_API_KEY}`;
 
   constructor(props: RecipesListProps) {
     super(props);
