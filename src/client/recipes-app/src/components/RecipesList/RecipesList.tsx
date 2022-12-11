@@ -50,9 +50,11 @@ class RecipesList extends React.Component {
           </div>
         </>
       );
-    } else if (!isLoaded) {
+    } 
+    else if (!isLoaded) {
       return <div>Loading...</div>;
-    } else {
+    } 
+    else {
       return (
         <div className="row row-cols-1 row-cols-md-2 g-4">
           {items.map((item: { id }) => (

@@ -1,9 +1,8 @@
 import { Routes, Route } from 'react-router-dom';
-import Home from './components/Home';
-import Create from './components/Create';
-import DailyMenu from './components/DailyMenu';
-import RecipesList from './components/RecipesList';
-import RecipeView from './components/RecipeView';
+import Home from './components/Home/Home';
+import DailyMenu from './components/DailyMenu/DailyMenu';
+import RecipesList from './components/RecipesList/RecipesList';
+import RecipeView from './components/RecipeView/RecipeView';
 const Main = () => {
 return (         
     <Routes>
@@ -11,7 +10,6 @@ return (
     <Route path='/recipes' element={<RecipesList/>} />
     <Route path='/recipe/:id' element={<RecipeView/>} />
     <Route path='/daily-menu' element={<DailyMenu/>} />
-    <Route path='/create' element={<Create/>} />
   </Routes>
 );
 }

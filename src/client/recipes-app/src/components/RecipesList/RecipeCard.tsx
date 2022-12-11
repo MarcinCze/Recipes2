@@ -1,7 +1,5 @@
-// @ts-nocheck
 import React from "react";
 import { NavLink } from 'react-router-dom';
-import { isTemplateExpression } from "typescript";
 
 type RecipeItem = {
     id: string,
