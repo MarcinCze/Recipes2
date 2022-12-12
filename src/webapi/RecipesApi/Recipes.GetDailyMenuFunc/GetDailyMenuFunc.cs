@@ -8,27 +8,27 @@ using Recipes.Base.Services;
 
 using System.Threading.Tasks;
 
-namespace Recipes.GetRecipesFunc
+namespace Recipes.GetDailyMenuFunc
 {
-    public class GetRecipesFunc
+    public class GetDailyMenuFunc
     {
         private readonly ICosmosDbService dbService;
 
-        public GetRecipesFunc(ICosmosDbService dbService)
+        public GetDailyMenuFunc(ICosmosDbService dbService)
         {
             this.dbService = dbService;
         }
 
-        [FunctionName("GetRecipesFunc")]
+        [FunctionName("GetDailyMenuFunc")]
         public async Task<IActionResult> Run(
             [HttpTrigger(AuthorizationLevel.Function, "get", "post", Route = null)] HttpRequest req,
             ILogger logger)
         {
-            logger.LogInformation($"Starting {nameof(GetRecipesFunc)}");
+            logger.LogInformation($"Starting {nameof(GetDailyMenuFunc)}");
 
-            var recipes = await dbService.GetRecipesAsync();
-
-            return new OkObjectResult(recipes);
+            var dailyMenuItems = await dbService.GetDailyMenuItemsAsync();
+            
+            return new OkObjectResult(dailyMenuItems);
         }
     }
 }

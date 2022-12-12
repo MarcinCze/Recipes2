@@ -6,6 +6,10 @@ namespace Recipes.Base.Services
     {
         Task CreateRecipeAsync(Recipe recipe);
 
-        Task<List<Recipe>> GetRecipesAsync();
+        Task CreateDailyMenuItemAsync(DailyMenuItem dailyMenuItem);
+
+        Task<IEnumerable<Recipe>> GetRecipesAsync();
+
+        Task<IEnumerable<DailyMenuItem>> GetDailyMenuItemsAsync();
     }
 }

@@ -8,7 +8,8 @@ namespace Recipes.Base.Services
     public class CosmosDbService : ICosmosDbService
     {
         private const string DatabaseName = "recipes-db";
-        private const string ContainerName = "recipes-container";
+        private const string RecipeContainerName = "recipes-container";
+        private const string DailyItemContainerName = "dailymenu-container";
 
         private readonly ILogger logger;
         private readonly IKeyVaultService keyVaultService;
@@ -19,7 +20,27 @@ namespace Recipes.Base.Services
             this.logger = logger;
         }
 
+        public async Task CreateDailyMenuItemAsync(DailyMenuItem dailyMenuItem)
+            => await SaveDocumentAsync<DailyMenuItem>(
+                document: dailyMenuItem, 
+                containerName: DailyItemContainerName, 
+                partitionKey: new PartitionKey(dailyMenuItem.Id.ToString()));
+
+
         public async Task CreateRecipeAsync(Recipe recipe)
+            => await SaveDocumentAsync<Recipe>(
+                document: recipe,
+                containerName: RecipeContainerName,
+                partitionKey: new PartitionKey(recipe.Id.ToString()));
+
+        public async Task<IEnumerable<DailyMenuItem>> GetDailyMenuItemsAsync()
+            => await GetAllDocumentsAsync<DailyMenuItem>(DailyItemContainerName);
+
+        public async Task<IEnumerable<Recipe>> GetRecipesAsync()
+            => await GetAllDocumentsAsync<Recipe>(RecipeContainerName);
+
+        private async Task SaveDocumentAsync<T>(T document, string containerName, PartitionKey partitionKey)
+            where T : class
         {
             using CosmosClient client = new(
                 await keyVaultService.GetSecretAsync("CosmosAccountEndpoint"),
@@ -27,17 +48,18 @@ namespace Recipes.Base.Services
             );
 
             Database database = client.GetDatabase(DatabaseName);
-            Container container = database.GetContainer(ContainerName);
-            
-            Recipe createdItem = await container.CreateItemAsync<Recipe>(
-                item: recipe,
-                partitionKey: new PartitionKey(recipe.Id.ToString())
+            Container container = database.GetContainer(containerName);
+
+            T createdItem = await container.CreateItemAsync<T>(
+                item: document,
+                partitionKey: partitionKey
             );
         }
 
-        public async Task<List<Recipe>> GetRecipesAsync()
+        private async Task<IEnumerable<T>> GetAllDocumentsAsync<T>(string containerName)
+            where T : class
         {
-            List<Recipe> results = new();
+            List<T> results = new();
 
             using CosmosClient client = new(
                 await keyVaultService.GetSecretAsync("CosmosAccountEndpoint"),
@@ -45,18 +67,15 @@ namespace Recipes.Base.Services
             );
 
             Database database = client.GetDatabase(DatabaseName);
-            Container container = database.GetContainer(ContainerName);
+            Container container = database.GetContainer(containerName);
 
             QueryDefinition definition = new("SELECT * FROM c");
 
-            FeedIterator<Recipe> iterator = container.GetItemQueryIterator<Recipe>(definition);
+            FeedIterator<T> iterator = container.GetItemQueryIterator<T>(definition);
             while (iterator.HasMoreResults)
             {
-                FeedResponse<Recipe> responseResults = await iterator.ReadNextAsync();
-                foreach (var item in responseResults)
-                {
-                    results.Add(item);
-                }
+                FeedResponse<T> responseResults = await iterator.ReadNextAsync();
+                results.AddRange(responseResults);
             }
 
             return results;
