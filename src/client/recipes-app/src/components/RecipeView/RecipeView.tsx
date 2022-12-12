@@ -7,7 +7,7 @@ import RecipeViewIngredientItem from "./RecipeViewIngredientItem";
 class RecipeView extends React.Component {
 
     recipeId: string | null = null;
-    apiUrl: string = `https://getrecipesfunc.azurewebsites.net/api/GetRecipesFunc?code=${process.env.REACT_APP_API_KEY}`;
+    apiUrl: string = `https://getrecipesfunc.azurewebsites.net/api/GetRecipesFunc?code=${process.env.REACT_APP_API_KEY_GetRecipesFunc}`;
 
     constructor(props: any) {
         super(props);
