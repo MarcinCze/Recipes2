@@ -69,7 +69,7 @@ class RecipeView extends React.Component {
 
         for (var recipe of items) {
             console.log(recipe);
-            if (recipe.id == recipeId) {
+            if (recipe.id === recipeId) {
                 return recipe;
             }
         }
