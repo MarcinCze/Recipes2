@@ -1,4 +1,4 @@
-name: [Develop] Node.js Build
+name: Develop Node.js Build
 
 on:
   pull_request:
