@@ -3,6 +3,7 @@ import React from "react";
 import RecipeModel from "../../models/RecipeModel";
 import RecipeViewStepItem from "./RecipeViewStepItem";
 import RecipeViewIngredientItem from "./RecipeViewIngredientItem";
+import Loader from "../Loader/Loader";
 
 class RecipeView extends React.Component {
 
@@ -90,7 +91,7 @@ class RecipeView extends React.Component {
             );
         }
         else if (!isLoaded) {
-            return <div>Loading...</div>
+            return <Loader></Loader>;
         }
         else {
             return (

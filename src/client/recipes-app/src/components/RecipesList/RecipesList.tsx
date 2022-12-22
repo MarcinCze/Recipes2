@@ -1,5 +1,6 @@
 // @ts-nocheck
 import React from "react";
+import Loader from "../Loader/Loader";
 import RecipeCard from "./RecipeCard";
 
 type RecipesListProps = {
@@ -52,13 +53,13 @@ class RecipesList extends React.Component {
       );
     } 
     else if (!isLoaded) {
-      return <div>Loading...</div>;
+      return <Loader></Loader>;
     } 
     else {
       return (
         <div className="row row-cols-1 row-cols-md-2 g-4">
           {items.map((item: { id }) => (
-            <RecipeCard key={item.id} id={item.id} name={item.name} description={item.description} />
+            <RecipeCard key={item.id} id={item.id} name={item.name} description={item.description} imageUrl={item.imageUrl} />
           ))}
         </div>
       );
