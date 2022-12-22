@@ -1,4 +1,4 @@
-name: Develop Node.js Build
+name: Release Prod Publish Node.js
 
 on:
   pull_request:
@@ -29,7 +29,7 @@ jobs:
     - run: npm run build
 
     - name: FTP Deploy to prod
-      uses: SamKirkland/FTP-Deploy-Action@latest
+      uses: SamKirkland/FTP-Deploy-Action@3.1.2
       with:
         server: ftp.cluster007.hosting.ovh.net
         username: ${{ secrets.FTP_USER }}
