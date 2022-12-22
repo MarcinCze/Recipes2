@@ -15,7 +15,7 @@ class Home extends React.Component {
                     </div>
                     <div className="overflow-hidden" style={{ maxHeight: "30vh" }}>
                         <div className="container px-5">
-                            <img src="https://www.wallpapertip.com/wmimgs/77-776716_high-resolution-pizza-background.jpg" className="img-fluid border rounded-3 shadow-lg mb-4" width="700" height="500" loading="lazy" />
+                            <img src="https://www.wallpapertip.com/wmimgs/77-776716_high-resolution-pizza-background.jpg" className="img-fluid border rounded-3 shadow-lg mb-4" width="700" height="500" loading="lazy" alt="" />
                         </div>
                     </div>
                 </div>
