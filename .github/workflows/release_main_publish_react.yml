@@ -37,6 +37,6 @@ jobs:
         port: 21
         protocol: ftp
         local-dir: ./src/client/recipes-app/build/
-        server-dir: ./SUBDOMAINS/Recipes/
+        server-dir: ./SUBDOMAINS/Recipes/public/
 
 
