@@ -15,7 +15,6 @@ class RecipeCard extends React.Component<RecipeItem> {
             <>
                 <div className="col">
                     <div className="card">
-                        {/* <img src="https://dummyimage.com/400x200/cacaca/fff.jpg" className="card-img-top" /> */}
                         {this.props.imageUrl != null
                             ? <img style={{maxHeight:"300px"}} src={this.props.imageUrl} className="card-img-top" alt="" />
                             : <img style={{maxHeight:"300px"}} src="https://t4.ftcdn.net/jpg/04/70/29/97/360_F_470299797_UD0eoVMMSUbHCcNJCdv2t8B2g1GVqYgs.jpg" className="card-img-top" alt="" />
