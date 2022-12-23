@@ -17,6 +17,7 @@ function App() {
             <li className="nav-item"><NavLink to="/" className="nav-link">Home</NavLink></li>
             <li className="nav-item"><NavLink to="/recipes" className="nav-link">Recipes</NavLink></li>
             <li className="nav-item"><NavLink to="/daily-menu" className="nav-link">Daily menu</NavLink></li>
+            <li className="nav-item"><NavLink to="/login" className="nav-link">Login</NavLink></li>
           </ul>
         </header>
         <Main/>
