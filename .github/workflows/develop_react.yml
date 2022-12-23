@@ -2,7 +2,7 @@ name: Develop Node.js Build
 
 on:
   pull_request:
-    branches: [ "main" ]
+    branches: [ "main", "develop" ]
     
 defaults:
   run:
