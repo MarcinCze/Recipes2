@@ -19,17 +19,33 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
+
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
         cache-dependency-path: '**/package-lock.json'
-    - run: npm ci
-    - run: npm run build
+
+    - name: NPM CI
+      run: npm ci
+
+    - name: Create env file
+      run: |
+        echo REACT_APP_API_KEY_GetRecipesFunc=${{ secrets.API_KEY_GetRecipesFunc }} > .env
+        echo REACT_APP_API_KEY_GetDailyMenuFunc=${{ secrets.API_KEY_GetDailyMenuFunc }} >> .env
+
+    - name: Show file content
+      run: |
+        pwd
+        ls -la
+        cat .env
+
+    - name: NPM Build
+      run: npm run build
 
     - name: FTP Deploy to prod
-      uses: SamKirkland/FTP-Deploy-Action@4.3.0
+      uses: SamKirkland/FTP-Deploy-Action@4.3
       with:
         server: ftp.cluster007.hosting.ovh.net
         username: ${{ secrets.FTP_USER }}
