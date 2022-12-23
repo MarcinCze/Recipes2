@@ -45,7 +45,7 @@ jobs:
       run: npm run build
 
     - name: FTP Deploy to prod
-      uses: SamKirkland/FTP-Deploy-Action@4.3
+      uses: SamKirkland/FTP-Deploy-Action@4.3.3
       with:
         server: ftp.cluster007.hosting.ovh.net
         username: ${{ secrets.FTP_USER }}
