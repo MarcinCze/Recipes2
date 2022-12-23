@@ -15,6 +15,8 @@ namespace Recipes.Base.Models
 
         public List<Ingredient>? Ingredients { get; set; }
 
+        public string? ImageUrl { get; set; }
+
         public DateTime CreatedAt { get; set; }        
     }
 }

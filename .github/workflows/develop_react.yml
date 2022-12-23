@@ -1,8 +1,12 @@
-name: [Develop] Node.js Build
+name: Develop Node.js Build
 
 on:
   pull_request:
     branches: [ "main" ]
+    
+defaults:
+  run:
+    working-directory: ./src/client/recipes-app
 
 jobs:
   build:
@@ -23,4 +27,3 @@ jobs:
         cache-dependency-path: '**/package-lock.json'
     - run: npm ci
     - run: npm run build --if-present
-    - run: npm test

@@ -3,6 +3,7 @@ import React from "react";
 import RecipeModel from "../../models/RecipeModel";
 import RecipeViewStepItem from "./RecipeViewStepItem";
 import RecipeViewIngredientItem from "./RecipeViewIngredientItem";
+import Loader from "../Loader/Loader";
 
 class RecipeView extends React.Component {
 
@@ -68,7 +69,7 @@ class RecipeView extends React.Component {
 
         for (var recipe of items) {
             console.log(recipe);
-            if (recipe.id == recipeId) {
+            if (recipe.id === recipeId) {
                 return recipe;
             }
         }
@@ -90,7 +91,7 @@ class RecipeView extends React.Component {
             );
         }
         else if (!isLoaded) {
-            return <div>Loading...</div>
+            return <Loader></Loader>;
         }
         else {
             return (

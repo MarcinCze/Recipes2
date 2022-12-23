@@ -5,7 +5,8 @@ type RecipeModel = {
     name: string,
     description: string,
     steps: Array<string>,
-    ingredients: Array<IngredientModel>
+    ingredients: Array<IngredientModel>,
+    imageUrl: string
 }
 
 export default RecipeModel;
