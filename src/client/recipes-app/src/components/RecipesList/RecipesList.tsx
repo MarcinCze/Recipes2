@@ -2,6 +2,9 @@
 import React from "react";
 import Loader from "../Loader/Loader";
 import RecipeCard from "./RecipeCard";
+import { Helmet } from 'react-helmet';
+import packageJson from '../../../package.json';
+import PageTitle from "../PageTitle/PageTitle";
 
 type RecipesListProps = {
   error: {},
@@ -42,26 +45,37 @@ class RecipesList extends React.Component {
   }
 
   render() {
+
     const { error, isLoaded, items } = this.state;
     if (error) {
       return (
         <>
+          <PageTitle pageName="List"></PageTitle>
           <div className="alert alert-danger" role="alert">
             <strong>Error:</strong> {error.message}
           </div>
         </>
       );
-    } 
+    }
     else if (!isLoaded) {
-      return <Loader></Loader>;
-    } 
+      return (
+        <>
+          <PageTitle pageName="List"></PageTitle>
+          <Loader></Loader>
+        </>
+      );
+    }
     else {
       return (
-        <div className="row row-cols-1 row-cols-md-2 g-4">
-          {items.map((item: { id }) => (
-            <RecipeCard key={item.id} id={item.id} name={item.name} description={item.description} imageUrl={item.imageUrl} />
-          ))}
-        </div>
+        <>
+          <PageTitle pageName="List"></PageTitle>
+          <div className="row row-cols-1 row-cols-md-2 g-4">
+            {items.map((item: { id }) => (
+              <RecipeCard key={item.id} id={item.id} name={item.name} description={item.description} imageUrl={item.imageUrl} />
+            ))}
+          </div>
+        </>
+
       );
     }
   }

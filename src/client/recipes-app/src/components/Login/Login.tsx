@@ -3,6 +3,7 @@ import React from "react";
 import { NavLink } from 'react-router-dom';
 import Loader from "../Loader/Loader";
 import './Login.css';
+import PageTitle from "../PageTitle/PageTitle";
 
 interface IProps {
 }
@@ -53,6 +54,7 @@ class Login extends React.Component<IProps, IState> {
     render() {
         return (
             <>
+                <PageTitle pageName="Log in"></PageTitle>
                 <h1 className="display-6">Log in</h1>
                 <div style={{ display: "block", height: "3em" }}></div>
 

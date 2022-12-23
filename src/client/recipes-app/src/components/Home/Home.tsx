@@ -1,10 +1,12 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import PageTitle from "../PageTitle/PageTitle";
 
 class Home extends React.Component {
     render() {
         return (
             <>
+                <PageTitle pageName="Home"></PageTitle>
                 <div className="px-4 pt-5 my-5 text-center border-bottom">
                     <h1 className="display-4 fw-bold">Recipes</h1>
                     <div className="col-lg-6 mx-auto">

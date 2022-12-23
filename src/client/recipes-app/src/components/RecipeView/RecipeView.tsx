@@ -4,6 +4,7 @@ import RecipeModel from "../../models/RecipeModel";
 import RecipeViewStepItem from "./RecipeViewStepItem";
 import RecipeViewIngredientItem from "./RecipeViewIngredientItem";
 import Loader from "../Loader/Loader";
+import PageTitle from "../PageTitle/PageTitle";
 
 class RecipeView extends React.Component {
 
@@ -84,6 +85,7 @@ class RecipeView extends React.Component {
         if (error) {
             return (
                 <>
+                    <PageTitle pageName="Details"></PageTitle>
                     <div className="alert alert-danger" role="alert">
                         <strong>Error:</strong> {error.message}
                     </div>
@@ -91,11 +93,16 @@ class RecipeView extends React.Component {
             );
         }
         else if (!isLoaded) {
-            return <Loader></Loader>;
+            return
+            <>
+                <PageTitle pageName="Details"></PageTitle>
+                <Loader></Loader>
+            </>;
         }
         else {
             return (
                 <>
+                    <PageTitle pageName={item.name}></PageTitle>
                     <h1 className="display-6">{item.name}</h1>
                     <p className="lead">{item.description}</p>
 

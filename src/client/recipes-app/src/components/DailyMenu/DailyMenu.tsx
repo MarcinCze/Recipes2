@@ -3,6 +3,7 @@ import React from "react";
 import DailyMenuModel from "../../models/DailyMenuModel"
 import { NavLink } from 'react-router-dom';
 import Loader from "../Loader/Loader";
+import PageTitle from "../PageTitle/PageTitle";
 
 type DailyMenuProps = {
     error: {},
@@ -80,7 +81,7 @@ class DailyMenu extends React.Component {
 
     formatDate = (day: number, month: number, year: number): string => `${day}.${month}`;
 
-    getDayName = (day: number, month: number, year: number, locale: string) => (new Date(year, month-1, day)).toLocaleDateString(locale, { weekday: 'long' });
+    getDayName = (day: number, month: number, year: number, locale: string) => (new Date(year, month - 1, day)).toLocaleDateString(locale, { weekday: 'long' });
 
     render() {
         const { error, isLoaded, items }: { error: {}, isLoaded: boolean, items: DailyMenuModel[] } = this.state;
@@ -100,6 +101,7 @@ class DailyMenu extends React.Component {
         else {
             return (
                 <>
+                    <PageTitle pageName="Daily menu"></PageTitle>
                     <h1 className="display-6">Daily menu</h1>
                     <div style={{ display: "block", height: "3em" }}></div>
 
