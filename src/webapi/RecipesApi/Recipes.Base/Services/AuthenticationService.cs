@@ -32,7 +32,7 @@ namespace Recipes.Base.Services
                 throw new ArgumentNullException(nameof(credentials));
 
             // TODO Add logic based on DB
-            bool authenticated = credentials?.User.Equals("marcin", StringComparison.OrdinalIgnoreCase) ?? false;
+            bool authenticated = credentials?.User.Equals("marcin@marcin.pl", StringComparison.OrdinalIgnoreCase) ?? false;
 
             if (!authenticated)
                 throw new UnauthorizedAccessException();
