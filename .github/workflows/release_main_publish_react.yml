@@ -34,6 +34,7 @@ jobs:
       run: |
         echo REACT_APP_API_KEY_GetRecipesFunc=${{ secrets.API_KEY_GetRecipesFunc }} > .env
         echo REACT_APP_API_KEY_GetDailyMenuFunc=${{ secrets.API_KEY_GetDailyMenuFunc }} >> .env
+        echo REACT_APP_API_KEY_AuthenticateFunc=${{ secrets.API_KEY_AuthenticateFunc }} >> .env
 
     - name: NPM Build
       run: npm run build
