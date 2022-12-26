@@ -7,7 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Recipes.GetRecipesFunc", "R
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Recipes.Base", "Recipes.Base\Recipes.Base.csproj", "{F69A8708-8CD8-40A0-B9AD-F7C343A20009}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Recipes.GetDailyMenuFunc", "Recipes.GetDailyMenuFunc\Recipes.GetDailyMenuFunc.csproj", "{CBC7944F-5289-4F7E-AB6E-059F752CDBAC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Recipes.GetDailyMenuFunc", "Recipes.GetDailyMenuFunc\Recipes.GetDailyMenuFunc.csproj", "{CBC7944F-5289-4F7E-AB6E-059F752CDBAC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Recipes.AuthenticateFunc", "Recipes.AuthenticateFunc\Recipes.AuthenticateFunc.csproj", "{9CCD76F4-8120-4B24-BEFB-5EFDC1901632}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{CBC7944F-5289-4F7E-AB6E-059F752CDBAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CBC7944F-5289-4F7E-AB6E-059F752CDBAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CBC7944F-5289-4F7E-AB6E-059F752CDBAC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9CCD76F4-8120-4B24-BEFB-5EFDC1901632}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9CCD76F4-8120-4B24-BEFB-5EFDC1901632}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9CCD76F4-8120-4B24-BEFB-5EFDC1901632}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9CCD76F4-8120-4B24-BEFB-5EFDC1901632}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
